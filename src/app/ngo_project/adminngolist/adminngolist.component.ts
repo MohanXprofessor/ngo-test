@@ -12,9 +12,8 @@ declare const myNgoscript:any;
   styleUrl: './adminngolist.component.css'
 })
 export class AdminngolistComponent {
-updateNgo(arg0: number) {
-throw new Error('Method not implemented.');
-}
+
+
   mytablescripy()
   {
     myNgoscript();
