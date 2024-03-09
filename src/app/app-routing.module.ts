@@ -32,7 +32,7 @@ const routes: Routes = [
   { path:"afterslide",component:AftersliderComponent},
   { path:"ngoexpenditure",component:NgoexpenditureComponent},
   { path:"donations",component:DonationsComponent},
-  { path:"ngoedit",component:NgoeditComponent}
+  { path:"ngoedit/:ngo_id",component:NgoeditComponent}
 
 
 

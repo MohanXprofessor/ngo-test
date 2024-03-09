@@ -19,20 +19,23 @@ export class AdminngolistComponent {
     myNgoscript();
   }
    
-delete()
+deletemsg()
 {
   Swal.fire({
-    title: "Do you want to save the changes?",
-    showDenyButton: true,
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
     showCancelButton: true,
-    confirmButtonText: "Save",
-    denyButtonText: `Don't save`
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
   }).then((result) => {
-    /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
-      Swal.fire("Saved!", "", "success");
-    } else if (result.isDenied) {
-      Swal.fire("Changes are not saved", "", "info");
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success"
+      });
     }
   });
 }
@@ -72,9 +75,13 @@ calculateTotalExpenditure() {
 
 
  deleteNgo(id:any){
+
+ 
  return this.service.deleteNgo(id).subscribe((data)=>{
   console.log(data);
   this.getAll();
+  this.deletemsg();
+
  })
  }
 
@@ -82,6 +89,9 @@ calculateTotalExpenditure() {
 //   this.router.navigate(['details', id]);
 //  }
 
+updateDetails(id:number){
+  this.router.navigate(['ngoedit', id])
+   }
  
 
 }

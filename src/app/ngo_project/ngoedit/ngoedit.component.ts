@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgoserviceService } from '../../services/ngoservice.service';
 import { Ngo } from '../../models/Ngo';
 import { Observable, switchMap } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ngoedit',
@@ -43,13 +44,20 @@ export class NgoeditComponent {
     this.service.updateNgo(this.ngo).subscribe(
       (updatedNgo: Ngo) => {
         console.log('NGO updated successfully:', updatedNgo);
-        this.router.navigate(['/ngolist']); // Navigate to NGO list after update
+        this.router.navigate(['/admin-panel']); // Navigate to NGO list after update
       },
       error => {
         console.error('Error updating NGO:', error);
         // Handle error: Display error message to user or handle accordingly
       }
     );
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Record Updated Successfully..!",
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 }
 
