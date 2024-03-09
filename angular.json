@@ -33,11 +33,15 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+
             ],
             "styles": [
               "src/styles.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/ngotablescript.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,10 +100,15 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/loginDonate.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "1b30ab99-550c-454b-82ae-6f740202c259"
   }
 }
